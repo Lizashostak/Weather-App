@@ -29,14 +29,7 @@ cityForm.addEventListener('submit', e => {
 
 //update UI with city Temp details
 const updadeUI = (data) => {
-    // const cityDetailes = data.cityDetails;
-    // const weather = data.weather;
-
-    //destructure properties
-    const {
-        cityDetails,
-        weather
-    } = data;
+    const { cityDetails,  weather } = data;
 
     //update details template
     details.innerHTML = `
