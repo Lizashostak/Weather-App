@@ -22,13 +22,6 @@ const getWeather = async (id) => {
     const data = await response.json();
     return data[0];
 }
-// getCity('netanya')
-//     .then(data => getWeather(data.Key)) //returns promise
-//     .then(data => {
-//         console.log(data)
-//     })
-//     .catch(err => console.log('rejected', err)); //err.message ->when the problem with response.json()
-
 
 //get places autocomplete
 const getPlace = async (name) => {
