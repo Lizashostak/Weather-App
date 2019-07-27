@@ -55,10 +55,10 @@ const updadeUI = (data) => {
 
 // Add a keyup event listener to input element
 name_input.addEventListener("keyup", e => {
-    var input = e.target;
-    var huge_list = document.getElementById('huge_list');
+    const input = e.target;
+    const huge_list = document.getElementById('huge_list');
 
-    var min_characters = 0;
+    const min_characters = 0;
     if (input.value.length < min_characters) {
         return;
     } else {
@@ -66,12 +66,16 @@ name_input.addEventListener("keyup", e => {
             .then(data => {
                 huge_list.innerHTML = "";
 
-                var cities = [];
+                let cities = [];
                 for (i = 0; i < data.length; i++) {
-                    cities.push(data[i].LocalizedName);
+                    if (cities.includes(data[i].LocalizedName)) {
+                        continue;
+                    } else {
+                        cities.push(data[i].LocalizedName);
+                    }
                 }
                 cities.forEach(function (item) {
-                    var option = document.createElement('option');
+                    let option = document.createElement('option');
                     option.value = item;
                     huge_list.appendChild(option);
                 });
