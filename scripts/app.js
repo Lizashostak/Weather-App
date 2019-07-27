@@ -67,12 +67,8 @@ name_input.addEventListener("keyup", e => {
                 huge_list.innerHTML = "";
 
                 let cities = [];
-                for (i = 0; i < data.length; i++) {
-                    if (cities.includes(data[i].LocalizedName)) {
-                        continue;
-                    } else {
-                        cities.push(data[i].LocalizedName);
-                    }
+                 for (i = 0; i < data.length; i++) {
+                    cities.push(data[i].LocalizedName + ' , ' + data[i].Country.LocalizedName);
                 }
                 cities.forEach(function (item) {
                     let option = document.createElement('option');
